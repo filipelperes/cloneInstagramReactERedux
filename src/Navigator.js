@@ -13,7 +13,7 @@ import Login from './screens/Login';
 import Register from './screens/Register';
 
 const authRouter = createStackNavigator({
-    Login: { 
+    Login: {
         screen: Login,
         navigationOptions: { title: 'Login' }
     },
@@ -29,7 +29,7 @@ const LoginOrProfileRouter = createSwitchNavigator({
     Profile: Profile,
     Auth: authRouter
 }, {
-    initialRouteName: 'Profile'
+    initialRouteName: 'Auth'
 })
 
 
