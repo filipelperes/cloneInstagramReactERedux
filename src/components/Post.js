@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {
     StyleSheet,
     View,
@@ -11,12 +12,14 @@ import AddComment from './AddComment';
 
 class Post extends Component {
     render() {
+        const addComment = this.props.name ?
+            <AddComment postId={this.props.id} /> : null
         return (
             <View style={style.container}>
                 <Image source={this.props.image} style={style.image} />
                 <Author email={this.props.email} nickName={this.props.nickName} />
                 <Comments comments={this.props.comments} />
-                <AddComment postId={this.props.id} />
+                {addComment}
             </View>
         )
     }
@@ -33,4 +36,11 @@ const style = StyleSheet.create({
     }
 })
 
-export default Post
+const mapStateToProps = ({ user }) => {
+    return {
+        name: user.name
+    }
+}
+
+export default connect(mapStateToProps)(Post);
+//export default Post;
