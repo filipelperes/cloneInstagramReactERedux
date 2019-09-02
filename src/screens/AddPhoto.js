@@ -35,11 +35,11 @@ class AddPhoto extends Component {
     save = async () => {
         this.props.onAddPost({
             id: Math.random(),
-            nickname: this.props.name,
+            nickName: this.props.name,
             email: this.props.email,
             image: this.state.image,
             comments: [{
-                nickname: this.props.name,
+                nickName: this.props.name,
                 comment: this.state.comment
             }]
         })

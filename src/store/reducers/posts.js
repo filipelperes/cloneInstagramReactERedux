@@ -36,7 +36,7 @@ const reducer = (state = initialState, action) => {
                 posts: state.posts.concat({
                     ...action.payload
                 })
-            };
+            }
         case ADD_COMMENT:
             return {
                 ...state,
@@ -48,6 +48,7 @@ const reducer = (state = initialState, action) => {
                             post.comments = [action.payload.comment]
                         }
                     }
+                    return post;
                 })
             }
         default: 

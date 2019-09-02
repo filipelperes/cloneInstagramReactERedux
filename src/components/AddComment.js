@@ -21,7 +21,7 @@ class AddComment extends Component {
         this.props.onAddComment({
             postId: this.props.postId,
             comment: {
-                nickname: this.props.name,
+                nickName: this.props.name,
                 comment: this.state.comment
             }
         })
