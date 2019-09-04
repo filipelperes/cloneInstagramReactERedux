@@ -13,8 +13,6 @@ const reducers = combineReducers({
     posts: postsReducer
 })
 
-const storeConfig = () => {
-    return createStore(reducers, compose(applyMiddleware(thunk)));
-}
+const storeConfig = () => createStore(reducers, compose(applyMiddleware(thunk)))
 
 export default storeConfig;
